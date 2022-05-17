@@ -1,43 +1,29 @@
 {
   "manifest_version": 3,
-  "name": "tuia-chrome-toolkit",
+  "name": "chrome-extension-boilerplate",
   "version": "0.1.0",
-  "description": "推啊Chrome工具",
+  "description": "Chrome插件模板",
   "background": {
     "service_worker": "src/pages/background/index.js"
   },
-  "permissions": [
-    "cookies"
-  ],
-  "host_permissions": [
-    "*://*.tuiatest.cn/*",
-    "*://*.tuia.cn/*",
-    "*://*.7hotest.com/*"
-  ],
   "icons": {
     "128": "icon-128.png"
   },
   "content_scripts": [
     {
       "matches": [
-        "*://*.tuiatest.cn/*",
-        "*://*.tuia.cn/*",
-        "*://*.7hotest.com/*",
-        "http://localhost:3010/*",
-        "http://172.16.224.246:3010/*"
+        "*://*/*"
       ],
       "js": [
-        "src/pages/sceneContent/index.js"
+        "src/pages/demoContent/index.js"
       ]
     },
     {
       "matches": [
-        "*://activity.tuiatest.cn/*",
-        "*://activity.tuia.cn/*",
-        "*://activity.tuifish.com/*"
+        "*://*/*"
       ],
       "js": [
-        "src/pages/deviceContent/index.js"
+        "src/pages/demo2Content/index.js"
       ]
     }
   ]

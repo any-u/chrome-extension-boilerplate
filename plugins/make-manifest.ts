@@ -3,10 +3,14 @@ import * as path from "path"
 import colorLog from "./log"
 import manifest from "../src/manifest"
 import { PluginOption } from "vite"
+import { fileURLToPath } from 'url';
 
 const { resolve } = path
 
-const outDir = resolve(__dirname, "..", "public")
+const root = fileURLToPath(import.meta.url);
+const dir = path.dirname(root);
+
+const outDir = resolve(dir, "..", "public")
 
 export function makeManifest(): PluginOption {
   return {

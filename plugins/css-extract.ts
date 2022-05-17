@@ -13,7 +13,7 @@ export function cssInjectedByJsPlugin(
   { topExecutionPriority, styleId, ignores } = {
     topExecutionPriority: true,
     styleId: "",
-    ignores: [],
+    ignores: [] as string[],
   }
 ): Plugin {
   //Globally so we can add it to legacy and non-legacy bundle.
